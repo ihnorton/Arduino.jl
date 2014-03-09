@@ -19,4 +19,4 @@ The "Octave-for-C-programmers," as I like to think of it, is an incredibly fast
 and powerful programming language that is a welcome breath of fresh air in the
 technical and numerical programming communities.
 
---rennis250 (2012, Copyleft)
+--rennis250
