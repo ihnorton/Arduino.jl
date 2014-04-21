@@ -1,15 +1,31 @@
 At the moment, this is a set of basic functions to communicate with the Arduino
 (http://www.arduino.cc). It should probably cover 98% of use cases. It uses the
-Arduino-serial library made by Tod E. Kurt
-(http://todbot.com/blog/2006/12/06/arduino-serial-c-code-to-talk-to-arduino) and the
+MIT licensed Arduino-serial library, made by Tod E. Kurt,
+(https://github.com/todbot/arduino-serial) and the
 GetC macro of Jasper den Ouden (https://github.com/o-jasper).
 
-A simple example is included.
+#Installation
 
-#Usage notes
+```julia
+Pkg.add("Arduino")
+```
 
-Compile the C file in the 'src' directory according to the instructions in the
-file.
+#Usage
+
+```julia
+using Arduino
+
+fd = init("/dev/tty.usbserial",9600) # open usb port with 9600 baud rate and get back FD to communicate with Arduino on
+
+writebyte(fd,uint8(1)) # send a byte to the Arduino
+
+write(fd,"string") # send a string to the Arduino
+
+buf = Array(Char, 256)
+read_until(fd, buf, '\n', , ) # read Arduino data into buf until a newline char is reached
+
+flush(fd) # clear all contents of the receiving buffer
+```
 
 #Credit
 
