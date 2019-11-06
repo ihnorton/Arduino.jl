@@ -1,3 +1,5 @@
+# This was a fork of a repository which no longer exists. Archived.
+
 At the moment, this is a set of basic functions to communicate with the Arduino
 (http://www.arduino.cc). It should probably cover 98% of use cases. It uses the
 MIT licensed Arduino-serial library, made by Tod E. Kurt,
